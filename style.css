@@ -1,5 +1,6 @@
 html body{
     margin: 0 auto;
+    background-color: lightblue;
 }
 body {
     display: grid;
@@ -155,7 +156,9 @@ body{
 .app{
     grid-row: 3/4;
     grid-column: 1/2;
-    height: 170vh;
+    height: fit-content;
+    
+    
     
 }
 

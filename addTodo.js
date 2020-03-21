@@ -95,7 +95,7 @@ const newtodo = () =>{
     let li = document.createElement('li')
     li.setAttribute('class', 'list-item')
     li.setAttribute('id', 'list-'+listCount)
-    todoinput.value === '' ? li.innerHTML = "YOU DIDNT ADD ANY TODO'S" :li.innerHTML = todoinput.value
+    todoinput.value.split(' ').join('') === '' ? li.innerHTML = "YOU DIDNT ADD ANY TODO'S" :li.innerHTML = todoinput.value
     li.addEventListener('click',option)
     const newSection = document.createElement('section')
     newSection.setAttribute('class', 'section-item')
