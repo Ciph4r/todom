@@ -82,3 +82,9 @@ body {
     color: white;
     border: none;
 }
+
+.logo {
+    height: 70px;
+    width: 150px;
+    padding-top: 40px;
+}

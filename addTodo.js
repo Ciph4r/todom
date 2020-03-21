@@ -95,10 +95,6 @@ const newtodo = () =>{
     const newSection = document.createElement('section')
     newSection.setAttribute('class', 'section-item')
     newSection.setAttribute('id', 'section-'+listCount)
-    // let inputbox = document.createElement('input')
-    // inputbox.value = 'ddddddd'
-    // inputbox.setAttribute('class', 'input-item')
-    // li.append(inputbox)
     newSection.append(li)
 
 
@@ -141,6 +137,43 @@ const deleteeveything = () => {
 deleteAll.addEventListener('click', deleteeveything)
 
 
+
+// prefilled stuf
+const newtodo2 = () =>{
+    let todoinput = document.querySelector('.todo-input').value
+    let li = document.createElement('li')
+    li.setAttribute('class', 'list-item')
+    li.setAttribute('id', 'list-'+listCount)
+    li.innerHTML = 'CLICK ME FOR MORE OPTIONS'
+    li.addEventListener('click',option)
+    const newSection = document.createElement('section')
+    newSection.setAttribute('class', 'section-item')
+    newSection.setAttribute('id', 'section-'+listCount)
+    newSection.append(li)
+
+
+    const button2 = document.createElement("BUTTON")
+    button2.setAttribute('class', 'edit-item')
+    button2.setAttribute('id', 'edit-'+listCount)
+    button2.innerHTML = 'Edit'
+    button2.style.visibility = "hidden"
+    button2.addEventListener('click' ,edit)
+    newSection.append(button2)
+
+
+
+
+    const button = document.createElement("BUTTON")
+    button.setAttribute('class', 'button-item')
+    button.setAttribute('id', 'button-'+listCount)
+    button.innerHTML = 'Delete'
+    button.style.visibility = "hidden"
+    button.addEventListener('click' ,remove)
+    newSection.append(button)
+    listCount ++
+    ol.append(newSection)
+}
+newtodo2()
 
 // const option = (event)=>{
 //     let ol = document.querySelector('.list')
