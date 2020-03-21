@@ -155,7 +155,7 @@ body{
 .app{
     grid-row: 3/4;
     grid-column: 1/2;
-    height: 120vh;
+    height: 170vh;
     
 }
 
@@ -168,7 +168,8 @@ body{
 .section-item{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    height: 200px;
 }
 
 .button-item{
@@ -186,5 +187,7 @@ body{
 .list-item{
     font-size: 20px;
     grid-column: 1/3; 
+
 }
+
 }
