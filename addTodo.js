@@ -153,7 +153,7 @@ const newtodo2 = () =>{
     let li = document.createElement('li')
     li.setAttribute('class', 'list-item')
     li.setAttribute('id', 'list-'+listCount)
-    li.innerHTML = 'CLICK ME FOR MORE OPTIONS'
+    li.innerHTML = '>>>>> CLICK ME <<<< FOR EDIT OPTIONS'
     li.addEventListener('click',option)
     const newSection = document.createElement('section')
     newSection.setAttribute('class', 'section-item')
