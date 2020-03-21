@@ -3,7 +3,7 @@ html body{
 }
 body {
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 15% 85%;
     grid-template-rows: 15% 85%;
     height: 100vh;
     
@@ -41,35 +41,47 @@ body {
 }
 .textCenter{
     text-align: center;
+    font-size: 80px;
 }
 
 .section-item {
     display: grid;
-    grid-template-columns: 80% 20%;
+    height: 50px;
+    grid-template-columns: 85% 7% 7%;
+    
 }
 
 
 
 .button-item{
-    width: 100px;
-    grid-column: 2/3;
+    width: 100%;
+    grid-column: 3/4;
     background-color: rgb(21, 91, 184);
     border: none;
+    font-size: 25px;
 }
 .edit-item{
-    width: 100px;  
+    font-size: 25px;
+    width: 100%;  
     grid-column: 2/3;
     background-color: rgb(21, 91, 184);
     border: none;
+    
+    
 }
 
 .input-item {
     text-align: center;
     grid-column: 1/4;
+    font-size: 20px;
+    
 }
 
 .todo-input{
     text-align: center;
+    font-size: 20px;
+    width: 100%;
+    resize: none;
 }
 .delete-area{
     grid-row: 3/4;
@@ -78,13 +90,30 @@ body {
  grid-row: 2/3;
 }
 .delete{
+    width: 180px;
+    height: 60px;
     background-color: black;
     color: white;
     border: none;
+    font-size: 20px;
 }
 
 .logo {
-    height: 70px;
-    width: 150px;
+    height: 100px;
+    width: 250px;
     padding-top: 40px;
+}
+.list-item{
+    display: grid;
+    align-items: center;
+    font-size: 30px;
+}
+
+.add-todo{
+    width: 60%;
+    height: 40px;
+    font-size: 20px;
+}
+.info{
+    font-size: 36px;
 }

@@ -5,7 +5,7 @@ const buttonLocation = document.querySelector('.button')
 let listItem = document.querySelectorAll('.list-item')
 const deleteAll = document.querySelector('.delete')
 let listCount = 0
-let editbox = true
+
 const idName = (x) =>{
     return x.split('-')[1]
     }
@@ -44,6 +44,7 @@ const option2 = (event)=>{
     const remove = () =>{
         const buttonID2 = document.getElementById('section-'+idName(event.target.id))
         buttonID2.remove()
+        
 
     }
 
@@ -57,26 +58,30 @@ const option2 = (event)=>{
 const edit = (event) => {
     const secID = document.getElementById('section-'+idName(event.target.id))
     const listID = document.getElementById('list-'+idName(event.target.id))
-    const inputbox = document.createElement('input')
+    if(!document.body.contains(document.querySelector('.input-item'))){
+
+        const inputbox = document.createElement('input')
  
-    const finaledit = (event) =>{
-        if (event.keyCode === 13){
-            listID.innerHTML = inputbox.value
-            inputbox.parentNode.removeChild(inputbox)
-            editbox = true
+        const finaledit = (event) =>{
+            if (event.keyCode === 13){
+                listID.innerHTML = inputbox.value
+                inputbox.parentNode.removeChild(inputbox)
+                
+            }
         }
+    
+    
+    
+        inputbox.value = innertextedit(secID.textContent)
+        inputbox.setAttribute('class', 'input-item')
+        secID.appendChild(inputbox)
+        inputbox.addEventListener('keyup',finaledit)
+        inputbox.focus()
+        inputbox.select()
+        
+    
     }
 
-
-if (editbox){
-    inputbox.value = innertextedit(secID.textContent)
-    inputbox.setAttribute('class', 'input-item')
-    secID.appendChild(inputbox)
-    inputbox.addEventListener('keyup',finaledit)
-    inputbox.focus()
-    inputbox.select()
-    editbox = false
-}
 }
 
 
@@ -86,11 +91,11 @@ if (editbox){
 
 
 const newtodo = () =>{
-    let todoinput = document.querySelector('.todo-input').value
+    let todoinput = document.querySelector('.todo-input')
     let li = document.createElement('li')
     li.setAttribute('class', 'list-item')
     li.setAttribute('id', 'list-'+listCount)
-    li.innerHTML = todoinput
+    todoinput.value === '' ? li.innerHTML = "YOU DIDNT ADD ANY TODO'S" :li.innerHTML = todoinput.value
     li.addEventListener('click',option)
     const newSection = document.createElement('section')
     newSection.setAttribute('class', 'section-item')
@@ -118,6 +123,9 @@ const newtodo = () =>{
     newSection.append(button)
     listCount ++
     ol.append(newSection)
+    todoinput.focus()
+    todoinput.value = ''
+
 }
 
 addButton.addEventListener('click', newtodo)
@@ -130,6 +138,7 @@ const deleteeveything = () => {
         li.remove()
     }
 }
+   
     listCount = 0
 }
 
