@@ -3,6 +3,7 @@ let ol = document.querySelector('.list')
 const addButton = document.querySelector('.add-todo')
 const buttonLocation = document.querySelector('.button')
 let listItem = document.querySelectorAll('.list-item')
+const deleteAll = document.querySelector('.delete')
 let listCount = 0
 let editbox = true
 const idName = (x) =>{
@@ -126,10 +127,18 @@ const newtodo = () =>{
 addButton.addEventListener('click', newtodo)
 
 
+const deleteeveything = () => {
+    if (window.confirm("ARE YOU SURE CAUSE THERE IS NO GOING BACK AFTER THIS BRAH")){
+    let ol = document.querySelectorAll('.section-item')
+    for (const li of ol){
+        li.remove()
+    }
+}
+    listCount = 0
+}
 
 
-
-
+deleteAll.addEventListener('click', deleteeveything)
 
 
 
