@@ -47,8 +47,9 @@ body {
 
 .section-item {
     display: grid;
-    height: 50px;
+    
     grid-template-columns: 85% 7% 7%;
+    grid-template-rows: 1fr 1fr;
     
 }
 
@@ -91,6 +92,14 @@ body {
  grid-row: 2/3;
 }
 .delete{
+    width: 180px;
+    height: 60px;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+.delete-highlited{
     width: 180px;
     height: 60px;
     background-color: black;

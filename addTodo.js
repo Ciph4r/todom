@@ -5,6 +5,8 @@ const buttonLocation = document.querySelector('.button')
 let listItem = document.querySelectorAll('.list-item')
 const deleteAll = document.querySelector('.delete')
 let listCount = 0
+const deleteHigh = document.querySelector('.delete-highlited')
+            deleteHigh.style.visibility = 'hidden'
 
 const idName = (x) =>{
     return x.split('-')[1]
@@ -21,11 +23,18 @@ const innertextedit = (x) =>{
 const option = (event)=>{
     const buttonID = document.querySelector('#button-'+idName(event.target.id))
     const editID = document.querySelector('#edit-'+idName(event.target.id))
+    const sectionID = document.querySelector('#section-'+idName(event.target.id))
     buttonID.style.visibility = "visible"
     editID.style.visibility = "visible"
     event.target.removeEventListener('click',option)
     event.target.addEventListener('click',option2)
     event.target.style.backgroundColor = 'yellow'
+    sectionID.className = sectionID.className + ' hilighted'
+    if(document.body.contains(document.querySelector('.hilighted'))){
+            const deleteHigh = document.querySelector('.delete-highlited')
+            deleteHigh.style.visibility = 'visible'
+    }
+
 }
 
 
@@ -34,10 +43,16 @@ const option2 = (event)=>{
     const buttonID = document.querySelector('#button-'+idName(event.target.id))
     const listID = document.getElementById('list-'+idName(event.target.id))
     const editID = document.querySelector('#edit-'+idName(event.target.id))
+    const sectionID = document.querySelector('#section-'+idName(event.target.id))
     buttonID.style.visibility = "hidden"
     editID.style.visibility = "hidden"
     listID.style.backgroundColor = ''
+    sectionID.className = sectionID.classList[0]
     listID.addEventListener('click',option)
+    if (!document.body.contains(document.querySelector('.hilighted'))){
+        const deleteHigh = document.querySelector('.delete-highlited')
+            deleteHigh.style.visibility = 'hidden'
+    }
 }
 
     
@@ -69,17 +84,18 @@ const edit = (event) => {
                 
             }
         }
-    
-    
-    
+     
         inputbox.value = innertextedit(secID.textContent)
         inputbox.setAttribute('class', 'input-item')
         secID.appendChild(inputbox)
         inputbox.addEventListener('keyup',finaledit)
         inputbox.focus()
         inputbox.select()
-        
-    
+    }
+    else { 
+        let inputinfo = document.querySelector('.input-item')
+        listID.innerHTML = inputinfo.value
+        inputinfo.parentNode.removeChild(inputinfo)
     }
 
 }
@@ -142,8 +158,18 @@ const deleteeveything = () => {
     listCount = 0
 }
 
+const deleteHightlighted = () => {
+    const ol = document.querySelectorAll('.hilighted')
+    for (const li of ol){
+        li.remove()
+    }
+    deleteHigh.style.visibility = 'hidden'
+}
+
+
 
 deleteAll.addEventListener('click', deleteeveything)
+deleteHigh.addEventListener('click',deleteHightlighted)
 
 
 
