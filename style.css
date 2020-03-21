@@ -45,14 +45,14 @@ body {
 
 .section-item {
     display: grid;
-    grid-template-columns: 80% 10% 10%;
+    grid-template-columns: 80% 20%;
 }
 
 
 
 .button-item{
     width: 100px;
-    grid-column: 3/4;
+    grid-column: 2/3;
     background-color: rgb(21, 91, 184);
     border: none;
 }
