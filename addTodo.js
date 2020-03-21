@@ -11,9 +11,7 @@ const deleteHigh = document.querySelector('.delete-highlited')
 const idName = (x) =>{
     return x.split('-')[1]
     }
-const innertextedit = (x) =>{
-    return x.split('EditDelete')[0]
-}
+
 
 
 
@@ -85,7 +83,7 @@ const edit = (event) => {
             }
         }
      
-        inputbox.value = innertextedit(secID.textContent)
+        inputbox.value = listID.innerHTML
         inputbox.setAttribute('class', 'input-item')
         secID.appendChild(inputbox)
         inputbox.addEventListener('keyup',finaledit)
