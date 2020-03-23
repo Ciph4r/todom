@@ -20,15 +20,14 @@ body {
     text-align: center;
 }
 .sideBar{
-    
     display: grid;
     grid-template-rows: 35% 60% 10%;
-    
     background-color: rgb(76, 200, 241);
     grid-row: 2 /3;
     grid-column: 1/2;
     text-align: center;
     height: 100%;
+
     
 }
 .banner{
@@ -42,7 +41,7 @@ body {
 }
 .textCenter{
     text-align: center;
-    font-size: 80px;
+    font-size: 8vh;
 }
 
 .section-item {
@@ -61,6 +60,7 @@ body {
     background-color: rgb(21, 91, 184);
     border: none;
     font-size: 25px;
+
 }
 .edit-item{
     font-size: 25px;
@@ -92,12 +92,12 @@ body {
  grid-row: 2/3;
 }
 .delete{
-    width: 180px;
-    height: 60px;
+    width: 70%;
+    height: 40%;
     background-color: black;
     color: white;
     border: none;
-    font-size: 20px;
+    font-size: 2vh;
 }
 .delete-highlited{
     width: 180px;
@@ -109,14 +109,14 @@ body {
 }
 
 .logo {
-    height: 100px;
-    width: 250px;
+    height: 10vh;
+    width: 20vh;
     padding-top: 40px;
 }
 .list-item{
     display: grid;
     align-items: center;
-    font-size: 30px;
+    font-size: 3vh;
 }
 
 .add-todo{
@@ -125,10 +125,10 @@ body {
     font-size: 20px;
 }
 .info{
-    font-size: 36px;
+    font-size: 3vh;
 }
 
-@media only screen and (max-device-width: 640px) {
+@media only screen and (max-device-width: 840px) {
 
 body{
     height: 100vh;
